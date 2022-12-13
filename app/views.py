@@ -9,5 +9,15 @@ def display_topics(request):
 
 def display_webpages(request):
     LWO=Webpage.objects.all()
+    LWO=Webpage.objects.filter(topic_name='cricket')
+    LWO=Webpage.objects.exclude(topic_name='cricket')
+    LWO=Webpage.objects.all()[2:5:]
+    LWO=Webpage.objects.all().order_by('name')
+    LWO=Webpage.objects.filter(topic_name='cricket').order_by('-name') 
     d={'LWO':LWO}
     return render(request,'display_webpages.html',d)
+
+def display_access(request):
+    LAO=access.objects.all()
+    d={'LAO':LAO}
+    return render(request,'display_access.html',d)

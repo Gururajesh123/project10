@@ -8,21 +8,21 @@
 </head>
 <body>
     <center>
-        <h1>Webpage models Data</h1>
+        <h1>display_access model data</h1>
+
         <table border="3px">
             <tr>
-                <th>topic_name</th>
                 <th>name</th>
-               <th>URL</th>
+                <th>date</th>
             </tr>
-            {% for w in LWO %}
+            {% for a in LAO %}
                 <tr>
-                    <td>{{w.topic_name}}</td>
-                    <td>{{w.name}}</td>
-                    <td>{{w.url}}</td>
+                    <td>{{a.name}}</td>
+                    <td>{{a.date}}</td>
                 </tr>
             {% endfor %}
         </table>
     </center>
+    
 </body>
 </html>
